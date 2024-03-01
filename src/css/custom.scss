@@ -1,0 +1,266 @@
+$primary: #901844;
+$carousel-transition-duration: .6s;
+$carousel-transition: transform $carousel-transition-duration ease-out;
+
+//bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+//fonts
+@import url(//fonts.googleapis.com/earlyaccess/tharlon.css);
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+//common css & scss
+$backgroundColor: #e0dddd96;
+$borderRadius: 20px;
+@mixin backgroundImg{
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body{
+    word-spacing: 2px;
+    scroll-behavior: smooth;
+    background-color: $backgroundColor;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lora','Tharlon',serif;
+    transition: all .3s;
+}
+.logoContainer{
+    width: 300px;
+    height: 300px;
+    @include backgroundImg();
+}
+.navbarSlider{
+    width: 20%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all .3s;
+}
+.nav-item:hover .navbarSlider, .sliderActive{
+    opacity: 1;   
+    width: 90%;
+}
+.dot{
+    width: 5px;
+    height: 5px;
+    background-color: $primary;
+    border-radius: 50%;
+}
+
+.toTheTopBtn{
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+}
+.card{
+    border: none;
+}
+Link{
+    cursor: pointer;
+}
+// nav bar
+.navbar-brand{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    @include backgroundImg();
+    background-size: 150%;
+}
+
+.isOpened{
+    height: 0px !important;
+}
+//home section
+
+//carousel
+.homePageImageContainer{
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+    @include backgroundImg();
+}
+.carousel{
+    height: 730px;
+    overflow: hidden;
+}
+.carousel-inner{
+    height: 100%;
+}
+.coursesThumbnail{
+    height: 300px;
+    width: 300px;
+    @include backgroundImg();
+}
+
+
+// Activities and News
+
+.recentActivityLink{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+//Memories Carousel
+.memoriesCarouselContainer{
+    padding: 30px 70px !important;
+    cursor: pointer;
+}
+
+.captionContainer{
+    height: 15% !important;
+    bottom: -200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(144, 24, 68, 0.8)
+}
+.memoriesCarouselContainer:hover{
+    .captionContainer{
+        bottom: 0;
+    }
+}
+
+
+//Student's reviews
+.studentReviewCard{
+    border-top: 4px solid $primary !important;
+    margin: 90px 0px 20px 0px;
+    width: 300px !important;
+    height: 380px;
+}
+.slick-slide div{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.imgFromStudentReview{
+    height: 110px;
+    width: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: -70px;
+    border: 3px solid #fff;
+    @include backgroundImg();
+}
+.slick-slide{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.slick-next:before,.slick-prev:before{
+    color: $primary;
+}
+.slick-dots li.slick-active button:before{
+    color: $primary;
+    font-size: 10px !important;
+}
+//Japan Courses Page
+.japanCourseCard{
+    border-top: 4px solid $primary !important;
+}
+
+//Contact Us
+.contactInfoLink:hover{
+    color: $primary !important;
+}
+
+//pagination
+.paginationBtns{
+    width: 100%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.paginationBtns a{
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    margin: 8px;
+    border: 1px solid $primary;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+.paginationBtns a:hover, .paginationActive a{
+    background-color: $primary;
+    color: #fff !important;
+}
+
+//Responsive
+@media (min-width: 1200px){
+    .slick-track{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1400px) {
+    .carousel{
+        height: 630px;
+    }
+}
+@media (max-width: 1200px) {
+    .memoriesCarouselContainer{
+        padding: 0px !important;
+    }
+    .carousel{
+        height: 530px;
+    }
+}
+@media (max-width: 1000px) {
+    .navbarSlider{
+        height : 0px;
+    }
+    .carousel{
+        height: 500px;
+    }
+    .JapaneseCourseSampleSection{
+        flex-direction: column-reverse;
+    }
+    .coursesThumbnail{
+        width: 100%;
+        height: 400px;
+        margin: 20px 0px;
+    }
+
+}
+
+@media (max-width: 990px) {
+    .carousel{
+        height: 400px;
+    }
+}
+@media (max-width: 770px) {
+    .carousel{
+        height: 300px !important;
+    }
+    .captionContainer{
+        height: 25% !important;
+    }
+    .captionContainer p{
+        font-size: 10px;
+    }
+}
+@media (max-width: 550px) {
+    .carousel{
+        height: 250px !important;
+    }
+    .coursesThumbnail{
+        height: 300px;
+    }
+}
+@media (max-width: 450px) {
+    .carousel{
+        height: 200px !important;
+    }
+    .studentReviewCard{
+        width: 17rem !important;
+        height: 450px;
+    }    
+}
